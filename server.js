@@ -1,9 +1,11 @@
 const express = require('express');
 const axios = require('axios');
 require("dotenv").config()
+const cors=require("cors")
 
 const app = express();
 const port = 3000;
+app.use(cors())
 
 app.get('/joke', async (req, res) => {
   const { keyword } = req.query;
